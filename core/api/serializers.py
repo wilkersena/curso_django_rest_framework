@@ -4,5 +4,5 @@ from core.models import PontoTuristico
 class PontoTuristicoSerializer(ModelSerializer):
     class Meta:
         model = PontoTuristico
-        fields = ['id','name', 'description']
-        #fields = ('id','name', 'description','aproved','resource', 'comments', 'reviews', 'address')
+        fields = ['id','name', 'description','photo']
+        #fields = ('id','name', 'description','aproved','resource', 'comments', 'reviews', 'address',)
