@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://curso-api-django.herokuapp.com/','http://localhost:8000/']
+ALLOWED_HOSTS = ['curso-api-django.herokuapp.com','http://localhost:8000']
 
 
 # Application definition
@@ -131,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = 'images'
 MEDIA_URL = '/media/'
