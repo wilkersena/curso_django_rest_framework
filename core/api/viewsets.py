@@ -3,7 +3,8 @@ from core.models import PontoTuristico
 from core.api.serializers import PontoTuristicoSerializer
 from rest_framework.decorators import action
 from rest_framework import filters
-
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 class PontoTuristicoViewSet(ModelViewSet):
     """
     A simple ViewSet for viewing and editing accounts.
@@ -12,6 +13,9 @@ class PontoTuristicoViewSet(ModelViewSet):
     serializer_class = PontoTuristicoSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['id', 'name']
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+
 
     def get_queryset(self):
         id = self.request.query_params.get('id',None)
