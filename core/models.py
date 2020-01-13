@@ -8,7 +8,7 @@ from addresses.models import Address
 class PontoTuristico(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
-    aproved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
     resource = models.ManyToManyField(Resource)
     comments = models.ManyToManyField(Comment)
     reviews = models.ManyToManyField(Review)
