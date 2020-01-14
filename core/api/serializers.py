@@ -11,14 +11,14 @@ from datetime import date
 
 class PontoTuristicoSerializer(ModelSerializer):
     resource = ResourceSerializer(many=True)
-    #comments = CommentSerializer(many=True)
-    #reviews = ReviewSerializer(many=True)
+    comments = CommentSerializer(many=True,read_only=True)
+    reviews = ReviewSerializer(many=True,read_only=True)
     address = AddressSerializer()
     data_hoje = SerializerMethodField(read_only=True)
     class Meta:
-        model = PontoTuristico
-        read_only_fields = ('comments', 'reviews')
+        model = PontoTuristico        
         fields = ('id','data_hoje','name','photo','description','approved','resource', 'comments', 'reviews', 'address',)
+        read_only_fields = ['comments', 'reviews']
 
     def get_data_hoje(self,obj):
         return date.today().strftime("%d/%m/%Y")
