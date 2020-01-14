@@ -1,4 +1,4 @@
-# API - Pontos Turísticos
+# API - Pontos Turísticos - Django REST FRAMEWORK
 
 * API desenvolvida com Django e Django REST Framework para o curso de APIs com Django REST Framework do Instrutor Gregory Pacheco(https://github.com/Gpzim98)
 
