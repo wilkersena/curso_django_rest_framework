@@ -3,7 +3,7 @@ from core.models import PontoTuristico
 from core.api.serializers import PontoTuristicoSerializer
 from rest_framework.decorators import action
 from rest_framework import filters
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 class PontoTuristicoViewSet(ModelViewSet):
     """
@@ -13,7 +13,8 @@ class PontoTuristicoViewSet(ModelViewSet):
     serializer_class = PontoTuristicoSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['id', 'name']
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     authentication_classes = [TokenAuthentication]
 
 
